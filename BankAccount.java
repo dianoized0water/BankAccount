@@ -13,7 +13,7 @@ public class BankAccount {
 
   // display data
   public String toString(){
-    return ("Your Account ID is: "+accountID+\n+"Your Balance is: "+balance);
+    return (accountID+\t+balance);
   }
 
   // access your info
@@ -32,7 +32,7 @@ public class BankAccount {
   // deposits
   public boolean deposit(double amount){
     if (amount>0){
-      balance = balance + amount;
+      balance += amount;
       return true;
     }
     else {
@@ -42,8 +42,14 @@ public class BankAccount {
 
   // withdrawl
   public boolean withdraw(double amount){
-    if (amount>balance){
-      
+    if (amount>balance || amount<0){
+      return false;
+    }
+    else {
+      balance -= amount;
+      return true;
     }
   }
+
+
 }
