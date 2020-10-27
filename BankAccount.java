@@ -13,7 +13,7 @@ public class BankAccount {
 
   // display data
   public String toString(){
-    return (accountID+\t+balance);
+    return (accountID+"\t"+balance);
   }
 
   // access your info
@@ -23,6 +23,9 @@ public class BankAccount {
   public double getBalance(){
     return balance;
   }
+  /*public String getPasscode(){
+    return password;
+  }*/
 
   // change password?
   public void setPassword(String newPass){
@@ -50,6 +53,4 @@ public class BankAccount {
       return true;
     }
   }
-
-
 }
