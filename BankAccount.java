@@ -9,11 +9,17 @@ public class BankAccount {
     balance = 0.0;
     accountID = ID;
     password = pass;
+
+    /* or
+    if args are (int accountID, String password)
+      this.accountID = accountID;
+      this.password = password;
+    */
   }
 
   // display data
   public String toString(){
-    return (accountID+"\t"+balance);
+    return ("#"+accountID+"\t"+"$"+balance);
   }
 
   // access your info
@@ -23,9 +29,9 @@ public class BankAccount {
   public double getBalance(){
     return balance;
   }
-  /*public String getPasscode(){
+  public String getPasscode(){
     return password;
-  }*/
+  }
 
   // change password?
   public void setPassword(String newPass){
@@ -45,7 +51,7 @@ public class BankAccount {
 
   // withdrawl
   public boolean withdraw(double amount){
-    if (amount>=balance || amount<0){
+    if (amount>balance || amount<0){
       return false;
     }
     else {
