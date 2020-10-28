@@ -59,4 +59,21 @@ public class BankAccount {
       return true;
     }
   }
+
+  // transfering money
+  private boolean authenticate(String password){
+    return (this.password.equals(password));
+  }
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if (authenticate(password) && withdraw(amount)){
+      if (other.deposit(amount)){
+        return true;
+      }
+      else{
+        return false;
+        System.out.println("Critical Error!");
+      }
+    }
+    return false;
+  }
 }
