@@ -5,16 +5,10 @@ public class BankAccount {
   private String password;
 
   // constructor?
-  public BankAccount(int ID, String pass){
+  public BankAccount(int accountID, String password){
     balance = 0.0;
-    accountID = ID;
-    password = pass;
-
-    /* or
-    if args are (int accountID, String password)
-      this.accountID = accountID;
-      this.password = password;
-    */
+    this.accountID = accountID;
+    this.password = password;
   }
 
   // display data
@@ -70,8 +64,8 @@ public class BankAccount {
         return true;
       }
       else{
-        return false;
         System.out.println("Critical Error!");
+        return false;
       }
     }
     return false;
